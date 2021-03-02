@@ -52,7 +52,7 @@ class CanalClientProcess extends AbstractProcess
                             $data['type'] = $evenType;
 
                             $keyIndex = [];
-                            if($evenType = EventType::UPDATE){
+                            if($evenType = EventType::UPDATE) {
                                 foreach ($rowData->getBeforeColumns() as $column) {
                                     #获取主键 无主键不更新
                                     if ($column->getIsKey()) {
@@ -70,7 +70,7 @@ class CanalClientProcess extends AbstractProcess
                                         $data['new_data'][$column->getName()] = ['value' => $column->getValue(), 'updated' => $column->getUpdated()];
                                     }
                                 }
-                                print_r($data);return;
+                                print_r($data);
                             }
                         }
                     }
